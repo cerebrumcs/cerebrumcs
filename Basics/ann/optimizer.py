@@ -1,7 +1,4 @@
 '''
-Created on 07.05.2018
-
-@author: mstolz
 '''
 
 

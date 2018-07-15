@@ -1,5 +1,4 @@
 '''
-Created on 02.05.2018
 '''
 
 import numpy as np
@@ -219,24 +218,3 @@ class MLP(object):
             P += [Z[-1]]
         return P
   
-        
-def main():
-    from matplotlib import pyplot
-    from sklearn.neural_network import MLPRegressor
-    
-    X = np.random.rand(100,1) * np.pi
-    Y = np.sin(X)
-    X = (X - np.mean(X)) / np.std(X)
-    mlp = MLP(1,(20,5))
-    mlp.fit(X, Y, 1000, 0.001)
-    P = mlp.predict(X)
-  
-    pyplot.scatter(X,Y)
-    pyplot.scatter(X,P)
-
-
-    mlpc = MLPRegressor(hidden_layer_sizes=(10,50,5), activation="tanh", max_iter=1000)
-    mlpc.fit(X, Y)
-    PP = mlpc.predict(X)
-    pyplot.scatter(X,Y)
-    pyplot.scatter(X,PP)
